@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">QuizzApp</string>
+    <string name="btn_login_text">Login</string>
+    <string name="tv_signup_text">Sign up</string>
+</resources>
