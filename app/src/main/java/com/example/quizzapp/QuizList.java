@@ -1,37 +1,30 @@
 package com.example.quizzapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.ViewCompat;
-
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.LinearLayout;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
+import DAO.QuizDAO;
 
 import Models.Quiz;
-import Models.QuizQuestion;
 
 public class QuizList extends AppCompatActivity {
 
-    List<Quiz> quizLists;
     LinearLayout lyQuizList;
+    QuizDAO dao;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_list);
-        quizLists = new ArrayList<>();
-        fillQuizList();
+        dao = new QuizDAO();
+
         lyQuizList = (LinearLayout) findViewById(R.id.lyQuizList);
-        fillQuizListLayout();
+        dao.loadQuizzes(quizzes -> fillQuizListLayout((List<Quiz>) quizzes));
     }
-    public void fillQuizList(){
+    /*public void fillQuizList(){
         QuizQuestion q1 = new QuizQuestion("naruto is a girl ?","quizzimage" , 0);
         Map<Integer, String> choices1 = new HashMap<>();
         choices1.put(0, "nop");
@@ -52,8 +45,9 @@ public class QuizList extends AppCompatActivity {
 
         quizLists.add(quiz1);
 
-    }
-    public void fillQuizListLayout(){
+    }*/
+    public void fillQuizListLayout(List<Quiz> quizLists){
+        lyQuizList.removeAllViews();
         for (int i = 0; i < quizLists.size(); i++) {
             Button button = new Button(this.getApplicationContext());
             button.setText(quizLists.get(i).getName());

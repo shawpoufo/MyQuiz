@@ -1,6 +1,5 @@
  package com.example.quizzapp;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -15,6 +14,7 @@ import android.widget.Toast;
 
 import java.util.Map;
 
+import DAO.QuizQuestionDAO;
 import Models.Quiz;
 import Models.QuizQuestion;
 
@@ -33,6 +33,7 @@ import Models.QuizQuestion;
         setContentView(R.layout.activity_quiz_questions);
 
         quiz = (Quiz) getIntent().getExtras().getSerializable("questionList");
+        new QuizQuestionDAO().loadQuestions(quiz,questions -> nextQuestion());
         questionCount = -1;
 
         tvQuestion = (TextView) findViewById(R.id.tvQuestion);
@@ -48,13 +49,13 @@ import Models.QuizQuestion;
                 return;
             }
             RadioButton radioButtonResponse = (RadioButton) findViewById(rgQuestion.getCheckedRadioButtonId());
-            int response = (int) radioButtonResponse.getTag();
+            String response = radioButtonResponse.getTag().toString();
             if(quiz.getQuizQuestions().get(questionCount).verify(response))
                 points++;
             nextQuestion();
         });
 
-        nextQuestion();
+
 
     }
 
@@ -65,11 +66,11 @@ import Models.QuizQuestion;
             rgQuestion.removeAllViews();
             // pass and display next question
             QuizQuestion question = quiz.getQuizQuestions().get(questionCount);
-            tvQuestion.setText(question.getText());
+            tvQuestion.setText(question.getQuestion());
             ivQuestion.setImageResource(getDrawableId(question.getImageName()));
-            for(Map.Entry<Integer,String> entry : question.getChoices().entrySet()){
+            for(Map.Entry<String,Object> entry : question.getOptions().entrySet()){
                 RadioButton radioButton = new RadioButton(this);
-                radioButton.setText(entry.getValue());
+                radioButton.setText(entry.getValue().toString());
                 radioButton.setTag(entry.getKey());
                 int id = View.generateViewId();
                 radioButton.setId(id);

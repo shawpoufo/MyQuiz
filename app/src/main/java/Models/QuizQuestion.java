@@ -1,32 +1,57 @@
 package Models;
 
 import java.io.Serializable;
-import java.util.List;
 import java.util.Map;
 
 public class QuizQuestion implements Serializable {
-    private final String text;
-    private final String imageName;
-    private final int response;
-    private Map<Integer,String> choices;
+    private String question;
+    private String imageName;
+    private String correctAnswer;
+    private Map<String, Object> options;
 
-    public QuizQuestion(String text, String imageName, int response){
-        this.text = text;
+    public QuizQuestion() {
+        imageName = "quizzimage";
+    }
+
+    public QuizQuestion(String question, String imageName, String correctAnswer) {
+        this.question = question;
         this.imageName = imageName;
-        this.response = response;
+        this.correctAnswer = correctAnswer;
     }
 
-    public String getText() { return  text;}
-    public boolean verify(int res){
-        return response == res;
+    public String getQuestion() {
+        return question;
     }
+
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
+    }
+
+    public String getCorrectAnswer() {
+        return correctAnswer;
+    }
+
+    public void setCorrectAnswer(String correctAnswer) {
+        this.correctAnswer = correctAnswer;
+    }
+
+    public boolean verify(String res) {
+        return correctAnswer.equals(res);
+    }
+
     public String getImageName() {
         return imageName;
     }
-    public void setChoices(Map<Integer,String> mapList){
-        choices = mapList;
+
+    public void setOptions(Map<String, Object> mapList) {
+        options = mapList;
     }
-    public Map<Integer,String> getChoices(){
-        return choices;
+
+    public Map<String, Object> getOptions() {
+        return options;
     }
 }
