@@ -7,7 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="btn_login_color">#3A3D40</color>
-    <color name="main_color">#FFF75A4D</color>
-    <color name="secondary_color">#FF24454C</color>
+
+    <color name="main_color">#ffd064</color>
+    <color name="secondary_color">#75cef9</color>
+    <color name="secondary_color2">#b3e59f</color>
+    <color name="quiz_color">#FFDB5B52</color>
+
 </resources>

@@ -5,25 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="10dp"
     tools:context=".QuizQuestions">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tvQuestion"/>
+        android:id="@+id/tvQuestion"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:layout_gravity="center"
         android:id="@+id/ivQuestion"/>
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rgQuestion"
+        android:layout_marginTop="-15dp"
+        android:layout_marginBottom="15dp"
         />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="go next"
-        android:background="@color/secondary_color"
+        android:background="@color/main_color"
+
         android:id="@+id/btnNext"
 
         />

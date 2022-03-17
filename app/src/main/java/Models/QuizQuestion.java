@@ -10,7 +10,7 @@ public class QuizQuestion implements Serializable {
     private Map<String, Object> options;
 
     public QuizQuestion() {
-        imageName = "quizzimage";
+        //imageName = "spirited";
     }
 
     public QuizQuestion(String question, String imageName, String correctAnswer) {

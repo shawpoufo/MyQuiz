@@ -33,6 +33,7 @@ import Models.QuizQuestion;
         setContentView(R.layout.activity_quiz_questions);
 
         quiz = (Quiz) getIntent().getExtras().getSerializable("questionList");
+        // loading quiz questions from firebase
         new QuizQuestionDAO().loadQuestions(quiz,questions -> nextQuestion());
         questionCount = -1;
 
@@ -52,6 +53,7 @@ import Models.QuizQuestion;
             String response = radioButtonResponse.getTag().toString();
             if(quiz.getQuizQuestions().get(questionCount).verify(response))
                 points++;
+
             nextQuestion();
         });
 
@@ -63,6 +65,7 @@ import Models.QuizQuestion;
         questionCount++;
         if(questionCount < quiz.getQuizQuestions().size()) {
             // clear radioGroup items
+            rgQuestion.clearCheck();
             rgQuestion.removeAllViews();
             // pass and display next question
             QuizQuestion question = quiz.getQuizQuestions().get(questionCount);

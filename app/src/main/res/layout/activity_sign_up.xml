@@ -41,5 +41,6 @@
         android:text="Login"
         android:drawableRight="@drawable/ic_baseline_login_24"
         android:textSize="20dp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:id="@+id/tvLogin"/>
 </LinearLayout>

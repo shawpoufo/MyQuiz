@@ -26,6 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="back to quizzes"
+        android:background="@color/secondary_color2"
         android:id="@+id/btnBackToQuizzes"/>
 
 </LinearLayout>

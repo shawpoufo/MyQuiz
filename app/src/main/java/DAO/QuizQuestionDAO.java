@@ -32,6 +32,7 @@ public class QuizQuestionDAO {
                         QuizQuestion model = dataSnapshot.getValue(QuizQuestion.class);
                         quiz.getQuizQuestions().add(model);
                     }
+                    Log.d("loadSize",quiz.getQuizQuestions().size()+"");
                     iOnLoadData.load(quiz.getQuizQuestions());
                 }
 
