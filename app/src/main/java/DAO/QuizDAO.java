@@ -25,7 +25,7 @@ public class QuizDAO {
     List<Quiz> quizList ;
 
     public QuizDAO(){
-        firebaseDatabase = FirebaseDatabase.getInstance("https://quiz-edf6e-default-rtdb.europe-west1.firebasedatabase.app");
+        firebaseDatabase = FirebaseDatabase.getInstance("https://quiz-24676-default-rtdb.europe-west1.firebasedatabase.app/");
         dbRef = firebaseDatabase.getReference(Quiz.class.getSimpleName());
         quizList = new ArrayList<>();
 

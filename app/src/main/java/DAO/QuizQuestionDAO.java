@@ -18,7 +18,7 @@ public class QuizQuestionDAO {
     private DatabaseReference dbRef;
 
     public QuizQuestionDAO() {
-        dbRef = FirebaseDatabase.getInstance("https://quiz-edf6e-default-rtdb.europe-west1.firebasedatabase.app").getReference(QuizQuestion.class.getSimpleName());
+        dbRef = FirebaseDatabase.getInstance("https://quiz-24676-default-rtdb.europe-west1.firebasedatabase.app").getReference(QuizQuestion.class.getSimpleName());
 
     }
 
