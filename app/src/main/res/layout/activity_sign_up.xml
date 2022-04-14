@@ -12,26 +12,31 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/ic_baseline_person_24"
-        android:hint="username"/>
+        android:hint="username"
+        android:id="@+id/tvUserName"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/ic_baseline_email_24"
-        android:hint="email"/>
+        android:hint="email"
+        android:id="@+id/tvEmail"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/ic_baseline_lock_24"
-        android:hint="password"/>
+        android:hint="password"
+        android:id="@+id/tvPassword"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/ic_baseline_lock_24"
-        android:hint="re-password"/>
+        android:hint="re-password"
+        android:id="@+id/tvRePassword"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Sign up"
+        android:id="@+id/btnSignUp"
         android:background="@color/main_color"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"/>
